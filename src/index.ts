@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import express, { Request, Response } from "express";
 import { connect } from "mongoose";
+import cors from "cors";
 import products from "./products";
 import orders from "./orders";
 const app = express();
@@ -9,6 +10,7 @@ dotenv.config({
   path: ".env",
 });
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
