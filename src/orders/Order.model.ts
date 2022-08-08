@@ -4,14 +4,19 @@ export const Order = model(
   "Order",
   new Schema({
     name: String,
+    product: {
+      type: Schema.Types.ObjectId,
+      ref: "Product",
+      required: true,
+    },
     customer: {
       name: String,
       address: String,
       phone: String,
     },
     consent: {
-      show_name: Boolean,
-      show_price: Boolean,
+      support_club: { type: Boolean, default: true },
+      show_support_amount: { type: Boolean, default: true },
     },
     payment: {
       method: String,

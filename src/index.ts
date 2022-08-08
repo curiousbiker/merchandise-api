@@ -1,9 +1,9 @@
+import cors from "cors";
 import dotenv from "dotenv";
 import express, { Request, Response } from "express";
 import { connect } from "mongoose";
-import cors from "cors";
-import products from "./products";
 import orders from "./orders";
+import products from "./products";
 const app = express();
 
 dotenv.config({
