@@ -9,6 +9,11 @@ router.get("", async (req: Request, res: Response) => {
     message: "Orders",
   });
 });
+router.post("/o", async (req: Request, res: Response) => {
+  return res.json({
+    message: "Orders o",
+  });
+});
 
 router.post("", async (req: Request, res: Response) => {
   let validation = new Validator(req.body, {
