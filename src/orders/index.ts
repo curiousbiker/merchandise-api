@@ -4,11 +4,11 @@ import Product from "../products/Product.model";
 import Order from "./Order.model";
 const router = Router();
 
-router.get("", async (req: Request, res: Response) => {
-  return res.json({
-    message: "Orders",
-  });
-});
+// router.get("", async (req: Request, res: Response) => {
+//   return res.json({
+//     message: "Orders",
+//   });
+// });
 
 router.post("", async (req: Request, res: Response) => {
   let validation = new Validator(req.body, {
