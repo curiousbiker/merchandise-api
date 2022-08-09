@@ -9,15 +9,11 @@ router.get("", async (req: Request, res: Response) => {
     message: "Orders",
   });
 });
-router.post("/o", async (req: Request, res: Response) => {
-  return res.json({
-    message: "Orders o",
-  });
-});
 
 router.post("", async (req: Request, res: Response) => {
   let validation = new Validator(req.body, {
     product: "required",
+    name: "required",
     customer: {
       name: "required",
       phone: "required",
@@ -54,11 +50,7 @@ router.post("", async (req: Request, res: Response) => {
     });
   }
 
-  const order = new Order({
-    product: req.body.product,
-    customer: req.body.customer,
-    payment: req.body.payment,
-  });
+  const order = new Order(req.body);
 
   await order.save();
 
